@@ -71,7 +71,7 @@ Further, the [`gix` crate documentation with the `git2` search term](https://doc
 
 ### Производственный класс
 
-* **Stability Tier 1**
+* **Уровень стабильности 1**
   - [gix-lock](https://github.com/GitoxideLabs/gitoxide/blob/main/gix-lock/README.md)
 
 * **Stability Tier 2**
@@ -96,7 +96,7 @@ Further, the [`gix` crate documentation with the `git2` search term](https://doc
 В этих ящиках могут отсутствовать некоторые функции и, следовательно, они несколько неполны, но то, что там
 есть, в некоторой степени пригодно для использования.
 
-* **usable** _(with rough but complete docs, possibly incomplete functionality)_
+* **usable** _(с грубыми, но полными документами, возможно, с неполной функциональностью)_
   * [gix](https://github.com/GitoxideLabs/gitoxide/blob/main/crate-status.md#gix) (**⬅ entrypoint**)
   * [gix-object](https://github.com/GitoxideLabs/gitoxide/blob/main/crate-status.md#gix-object)
   * [gix-validate](https://github.com/GitoxideLabs/gitoxide/blob/main/crate-status.md#gix-validate)
@@ -155,13 +155,13 @@ Further, the [`gix` crate documentation with the `git2` search term](https://doc
   * [gix-bundle](https://github.com/GitoxideLabs/gitoxide/blob/main/crate-status.md#gix-bundle)
   * [gix-fsck](https://github.com/GitoxideLabs/gitoxide/blob/main/crate-status.md#gix-fsck)
 
-### Stress Testing
-  * [x] Verify huge packs
-  * [x] Explode a pack to disk
-  * [x] Generate and verify large commit graphs
-  * [ ] Generate huge pack from a lot of loose objects
+### Стресс-тестирование
+  * [x] Проверяйте огромные пакеты
+  * [x] Разверните  пакет на диск
+  * [x] Генерировать и проверять большие commit graphs
+  * [ ] Generate огромные пакеты from a lot of loose objects
 
-### Stability and MSRV
+### Стабильность and MSRV
 
 Our [stability guide] помогает оценить, насколько большую нагрузку можно ожидать в зависимости от количества ящиков в этом рабочем пространстве.
 
@@ -176,8 +176,9 @@ the [rust toolchain][rustup] присутствует.
 
 Затем установите gitoxide с помощью `cargo binstall gitoxide`.
 
-See the [releases section][releases] для ручной установки и различных альтернативных сборок, которые are _slimmer_ or _smaller_, depending
-on your needs, for _Linux_, _MacOS_ and _Windows_.
+See the [releases section][releases] для ручной установки и различных альтернативных сборок, 
+которые are _slimmer_ or _smaller_, в зависимости
+от ваших потребностей, for _Linux_, _MacOS_ and _Windows_.
 
 [releases]: https://github.com/GitoxideLabs/gitoxide/releases
 
@@ -189,9 +190,10 @@ on your needs, for _Linux_, _MacOS_ and _Windows_.
 pacman -S gitoxide
 ```
 
-### Download from Exherbo Linux Rust repository
+### Скачать с Exherbo Linux Rust repository
 
-For Exherbo Linux you can download `gitoxide` from the [Rust](https://gitlab.exherbo.org/exherbo/rust/-/tree/master/packages/dev-scm/gitoxide) repository:
+For Exherbo Linux вы можете скачать `gitoxide` from the 
+[Rust](https://gitlab.exherbo.org/exherbo/rust/-/tree/master/packages/dev-scm/gitoxide) repository:
 
 ```sh
 cave resolve -x repository/rust
@@ -233,15 +235,16 @@ cargo install --git https://github.com/GitoxideLabs/gitoxide gitoxide
 
 #### Как бороться со сбоями при сборке
 
-На некоторых платформах установка может завершиться неудачно из-за отсутствия инструментов, необходимых для *C* toolchains. Обычно этого можно избежать, установив с помощью:
+На некоторых платформах установка может завершиться неудачно из-за отсутствия инструментов, 
+необходимых для *C* toolchains. Обычно этого можно избежать, установив с помощью:
 
 ```sh
 cargo install gitoxide --no-default-features --features max-pure
 ```
 
-What follows is a list of known failures.
+Ниже приведен список известных сбоев.
 
-- On Fedora, `perl` needs to be installed for `OpenSSL` to build properly. This can be done with the following command (see [issue #592](https://github.com/GitoxideLabs/gitoxide/issues/592)):
+- On Fedora, `perl` должен быть установлен для `OpenSSL` to build properly. This can be done with the following command (see [issue #592](https://github.com/GitoxideLabs/gitoxide/issues/592)):
 
   ```sh
   dnf install perl
@@ -302,10 +305,10 @@ Project goals can change over time as we learn more, and they can be challenged.
    * станет доступной реализацией для всех, кто хочет решать проблемы, связанные с git, и в процессе станет
      * альтернативой `GitPython` и *libgit2*.
    * стать основой для распределенной альтернативы GitHub и, возможно, даже для использования в самом GitHub
- * **learn from the best to write the best possible idiomatic Rust**
+ * **учитесь у лучших, чтобы создавать наилучшие идиоматические выражения Rust**
    * * libgit2 - это фантастический ресурс, позволяющий увидеть, как работают абстракции, мы будем их использовать
    * используйте систему типов Rust, чтобы исключить неправильное использование
- * **be the best performing implementation**
+ * **быть наиболее эффективной реализацией**
    * используйте систему типов Rust для оптимизации работы, которая не выполняется без сложностей в использовании
    * используйте параллелизм с самого начала
    * поддержка проверки разборности с первого дня
@@ -374,24 +377,24 @@ Project goals can change over time as we learn more, and they can be challenged.
 
 ### Features for 1.0
 
-Provide a CLI to for the most basic user journey:
+Предоставлять a CLI для самого простого путешествия пользователя:
 
-* [x] initialize a repository
+* [x] инициализируйте репозиторий
 * [x] fetch
     * [ ] and update worktree
 * clone a repository
    - [ ] bare
    - [ ] with working tree
-* [ ] create a commit after adding worktree files
+* [ ] создайте "commit" после добавления файлов рабочего дерева
 * [x] add a remote
 * [ ] push
   * [x] create (thin) pack
 
 ### Ideas for Examples
 
-* [ ] `gix tool open-remote` open the URL of the remote, possibly after applying known transformations to go from `ssh` to `https`.
-* [ ] `tix` as example implementation of `tig`, displaying a version of the commit graph, useful for practicing how highly responsive GUIs can be made.
-* [ ] Something like [`git-sizer`](https://github.com/github/git-sizer), but leveraging extreme decompression speeds of indexed packs.
+* [ ] `gix tool open-remote` откройте URL-адрес удаленного устройства, возможно, после применения известных преобразований для перехода с "ssh" на "https".
+* [ ] `tix` as example implementation of `tig`, отображение версии графика фиксации, полезной для практики создания высокочувствительных графических интерфейсов.
+* [ ] Something like [`git-sizer`](https://github.com/github/git-sizer), но с использованием экстремальных скоростей распаковки индексированных пакетов.
 * [ ] Open up SQL for git using [sqlite virtual tables](https://github.com/rusqlite/rusqlite/blob/master/tests/vtab.rs). Check out gitqlite
   as well. What would an MVP look like? Maybe even something that could ship with gitoxide. See [this go implementation as example](https://github.com/filhodanuvem/gitql).
 * [ ] A truly awesome history rewriter which makes it easy to understand what happened while avoiding all pitfalls. Think BFG, but more awesome, if that's possible.
@@ -424,7 +427,7 @@ Provide a CLI to for the most basic user journey:
 [fossil-scm]: https://www.fossil-scm.org
 [magit]: https://magit.vc
 
-## Shortcomings & Limitations
+## Недостатки и ограничения
 
 Please take a look at the [`SHORTCOMINGS.md` file](https://github.com/GitoxideLabs/gitoxide/blob/main/SHORTCOMINGS.md) for details.
 
@@ -435,9 +438,11 @@ Please take a look at the [`SHORTCOMINGS.md` file](https://github.com/GitoxideLa
 * **flate2** _(MIT Licensed)_
   * We use the high-level `flate2` library to implement decompression and compression, which builds on the high-performance `zlib-rs` crate.
 
-## 🙏 Special Thanks 🙏
+## 🙏 Особая благодарность 🙏
 
-At least for now this section is exclusive to highlight the incredible support that [Josh Triplett](https://github.com/joshtriplett) has provided to me
+ По крайней мере, на данный момент этот раздел является эксклюзивным, чтобы подчеркнуть невероятную поддержку, которую
+ [Josh Triplett](https://github.com/joshtriplett) has provided to me
+ 
 in the form of advice, sponsorship and countless other benefits that were incredibly meaningful. Going full time with `gitoxide` would hardly have been
 feasible without his involvement, and I couldn't be more grateful 😌.
 
